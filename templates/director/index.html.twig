@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des réalisateurs{% endblock %}
+
+{% block body %}
+
+<h2>Liste des réalisateurs</h2>
+
+{% for director in directors %}
+   
+    {{director.nom}}<br/>
+    {{director.prenom}}<br/>
+    <img src="{{ asset('images/' ~ director.photo) }}"> <br/>
+
+{% endfor %}
+
+{% endblock %}
