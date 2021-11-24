@@ -4,14 +4,37 @@
 
 {% block body %}
 
-<h2>Liste des acteurs</h2>
+    <h2>Liste des acteurs</h2>  
 
-{% for actor in actors %}
-   
-    {{actor.nom}} <br/>
-     {{actor.prenom}}<br/>
-     <img src="{{ asset('images/' ~ actor.photo) }}"> <br/>
+    <table>
+    {% for actor in actors %}
+        <tr>
+        <td><img src="{{ asset('images/' ~ actor.photo) }}"></td>
+        <td>
+        <a href="{{
+            path('afficheactor', {'id': actor.id} )
+        }}">
+            {{actor.nom}}</a></td>
+        <td>{{actor.prenom}}</td>
+        </tr>
+        <td>
+        <a href="{{
+            path('modifactor', {'id': actor.id} )
+        }}">
+        modif
+        </a>
+        </td>
+        
+            {# {{actor.nom}} <br/>
+            {{actor.prenom}}<br/>
+            <img src="{{ asset('images/' ~ actor.photo) }}"> <br/> #}
 
-{% endfor %}
+    {% endfor %}
+    <tr><td><a href="{{
+            path('creationactor')
+        }}">Ajoute acteur</a>
+        </tr></td>
+
+    </table>
 
 {% endblock %}
