@@ -6,7 +6,7 @@ use App\Repository\ActorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Valab ;
 /**
  * @ORM\Entity(repositoryClass=ActorRepository::class)
  */
@@ -21,6 +21,7 @@ class Actor
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Valab\Length(min=3,max=15)
      */
     private $nom;
 

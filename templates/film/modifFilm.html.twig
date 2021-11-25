@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un film{% endblock %}
+
+{% block body %}
+
+<h1>{{film.titre}}</h1> {{film.description}}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value"enregistrer">
+    {{ form_end(form) }}
+
+{% endblock %}

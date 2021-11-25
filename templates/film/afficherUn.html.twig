@@ -7,9 +7,18 @@
    <h1>{{film.titre}}</h1><br/> {{film.description}}
    {# <img src="{{ asset('images/' ~ film.photo) }}"> #}
    <br/>
+   <h1>Acteurs<h1>
    {% for actor in film.actors %} 
    <h2>{{actor.nom}} {{actor.prenom}}</h2>
    <img src="{{ asset('images/' ~ actor.photo) }}">
+   <br/>
+   {% endfor %}
+   <h1>Réalisateur<h1>
+   {% for director in film.directors %} 
+   <h2>{{director.nom}} {{director.prenom}}</h2>
+   <img src="{{ asset('images/' ~ director.photo) }}">
+   <br/>
+
    {% endfor %}
 
 {% endblock %}

@@ -6,12 +6,36 @@
 
 <h2>Liste des réalisateurs</h2>
 
+<table>
 {% for director in directors %}
+
+    <tr>
+    <td><img src="{{ asset('images/' ~ director.photo) }}"></td>
+    <td>
+    <a href="{{
+        path('affichedirector', {'id': director.id} )
+    }}">
+        {{director.nom}}</a></td>
+    <td>{{director.prenom}}</td>
+    </tr>
+    <td>
+    <a href="{{
+        path('modifdirector', {'id': director.id} )
+    }}">
+    modif
+    </a>
+    </td>
    
-    {{director.nom}}<br/>
+    {# {{director.nom}}<br/>
     {{director.prenom}}<br/>
-    <img src="{{ asset('images/' ~ director.photo) }}"> <br/>
+    <img src="{{ asset('images/' ~ director.photo) }}"> <br/> #}
 
 {% endfor %}
+    <tr><td><a href="{{
+            path('creationdirector')
+        }}">Ajoute réalisateur</a>
+        </tr></td>
+
+    </table>
 
 {% endblock %}

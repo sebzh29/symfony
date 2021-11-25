@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un réalisateur{% endblock %}
+
+{% block body %}
+
+   <h1>{{director.nom}} {{director.prenom}}</h1>
+   <img src="{{ asset('images/' ~ director.photo) }}">
+
+{% endblock %}

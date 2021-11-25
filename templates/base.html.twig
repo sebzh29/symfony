@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+
 <html>
     <head>
+        <link href="../header.php">
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <link href="../styles.css" rel="stylesheet">           
+
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +19,21 @@
         {% endblock %}
     </head>
     <body>
+        <!-- Barre de navigation -->
+        <center>
+        <nav>
+
+            <h1>Nav</h1>
+            <div class="onglets">
+
+                <p> <a href="https://127.0.0.1:8000/actor">Listes des acteurs</a></p>
+                <p> <a href="https://127.0.0.1:8000/director">Liste des réalisateurs</a></p>
+                <p> <a href="https://127.0.0.1:8000/film">Liste des films</a></p>
+            
+            </div>
+        </nav>
+        </center>
+        <!-- Fin de la barre de navigation -->
         {% block body %}{% endblock %}
     </body>
 </html>

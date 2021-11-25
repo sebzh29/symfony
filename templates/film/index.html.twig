@@ -17,6 +17,15 @@
     <br/>
     {{film.description}}<br/>
     <br/>
+    <td>
+    <a href="{{
+        path('modiffilm', {'id': film.id} )
+    }}">
+    modif
+    </a>
+    <br/>
+    <br/>
+    </td>
     
 {% endfor %}
 
