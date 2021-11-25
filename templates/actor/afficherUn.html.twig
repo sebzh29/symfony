@@ -5,5 +5,6 @@
 {% block body %}
 
    <h1>{{actor.nom}} {{actor.prenom}}</h1>
+   <img src="{{ asset('images/' ~ actor.photo) }}">
 
 {% endblock %}

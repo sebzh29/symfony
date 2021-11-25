@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Un film{% endblock %}
+
+{% block body %}
+
+   <h1>{{film.titre}}</h1><br/> {{film.description}}
+   {# <img src="{{ asset('images/' ~ film.photo) }}"> #}
+   <br/>
+   {% for actor in film.actors %} 
+   <h2>{{actor.nom}} {{actor.prenom}}</h2>
+   <img src="{{ asset('images/' ~ actor.photo) }}">
+   {% endfor %}
+
+{% endblock %}
