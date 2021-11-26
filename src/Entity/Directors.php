@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\DirectorRepository;
+use App\Repository\DirectorsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Valab ;
+
 
 /**
- * @ORM\Entity(repositoryClass=DirectorRepository::class)
+ * @ORM\Entity(repositoryClass=DirectorsRepository::class)
  */
-class Director
+class Directors
 {
     /**
      * @ORM\Id
@@ -31,6 +35,16 @@ class Director
      * @ORM\Column(type="string", length=255)
      */
     private $photo;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Film::class, inversedBy="directors")
+     */
+    private $Directors;
+
+    public function __construct()
+    {
+        $this->Directors = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +83,32 @@ class Director
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    
+
+    /**
+     * @return Collection|Film[]
+     */
+    public function getDirectors(): Collection
+    {
+        return $this->Directors;
+    }
+
+    public function addDirector(Film $director): self
+    {
+        if (!$this->Directors->contains($director)) {
+            $this->Directors[] = $director;
+        }
+
+        return $this;
+    }
+
+    public function removeDirector(Film $director): self
+    {
+        $this->Directors->removeElement($director);
 
         return $this;
     }

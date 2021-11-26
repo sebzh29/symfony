@@ -34,9 +34,15 @@ class Film
      */
     private $actors;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Directors::class, mappedBy="Directors")
+     */
+    private $directors;
+
     public function __construct()
     {
         $this->actors = new ArrayCollection();
+        $this->directors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,6 +94,33 @@ class Film
     public function removeActor(Actor $actor): self
     {
         $this->actors->removeElement($actor);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Directors[]
+     */
+    public function getDirectors(): Collection
+    {
+        return $this->directors;
+    }
+
+    public function addDirector(Directors $director): self
+    {
+        if (!$this->directors->contains($director)) {
+            $this->directors[] = $director;
+            $director->addDirector($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDirector(Directors $director): self
+    {
+        if ($this->directors->removeElement($director)) {
+            $director->removeDirector($this);
+        }
 
         return $this;
     }

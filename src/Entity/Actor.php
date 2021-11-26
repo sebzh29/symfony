@@ -21,8 +21,9 @@ class Actor
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Valab\Length(min=3,max=15)
+     * @Valab\Length(min=3,max=15) 
      */
+    // si on veut en fr au desus dans la () minMessage="" et maxMessage="
     private $nom;
 
     /**

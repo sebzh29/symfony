@@ -13,6 +13,7 @@ nav{
   background-color: #fff;
   position: sticky;
   top: 0;
+  
 }
 nav h1{
   font-size: 20px;
@@ -20,6 +21,7 @@ nav h1{
 nav .onglets{
   display: flex;
   flex-wrap:wrap;
+ 
 }
 nav .onglets p{
   font-size: 17px;
@@ -34,4 +36,11 @@ nav .onglets input{
   background-color: #f2f2f2;
   outline:none;
 }
+
+
 /* Fin de la barre de navigation */
+
+/* */
+
+
+
