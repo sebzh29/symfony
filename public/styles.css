@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-body{
+*{
   margin:0px;
   padding: 0px;
   font-family: 'Open Sans', sans-serif;
@@ -9,14 +9,15 @@ nav{
   display:flex;
   flex-wrap:wrap;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #fff;
+  height: 100px;
+  background-color: red;
   position: sticky;
   top: 0;
-  
+  align-items: center;
 }
 nav h1{
   font-size: 20px;
+  margin: 0;
 }
 nav .onglets{
   display: flex;
@@ -37,8 +38,32 @@ nav .onglets input{
   outline:none;
 }
 
+#navigation p a {
+  display: block ;
+  background: rgb(84, 0, 153) url(actor.jpg) left top no-repeat ;
+  color: #fff ;
+  font: 1em "Trebuchet MS",Arial,sans-serif ;
+  line-height: 1em ;
+  padding: 4px 0 ;
+  text-align: center ;
+  border-style: ridge;
+  border-color: blue;
+}	
+#navigation p a:hover, #navigation p a:focus, #navigation p a:active {
+  background: #033 url(actor.jpg) right top no-repeat ;
+}
 
 /* Fin de la barre de navigation */
+
+body{
+  background-color: green;
+}
+
+table{
+  text-align: center ;
+  margin: auto;
+}
+
 
 /* */
 

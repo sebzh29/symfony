@@ -71,6 +71,38 @@ class FilmFixtures extends Fixture
                 ->addFilm($f2);
                           
             $manager->persist($actor4);
+
+        $actor5 = new Actor();
+        $actor5->setPrenom("Monica")
+                ->setNom("Bellucci")
+                ->setPhoto("bellucci.jpg")
+                ->addFilm($f2);
+                          
+            $manager->persist($actor5);
+
+        $actor6 = new Actor();
+        $actor6->setPrenom("Tomer")
+                ->setNom("Sisley")
+                ->setPhoto("sisley.jpg")
+                ->addFilm($f2);
+                          
+            $manager->persist($actor6);
+
+        $actor7 = new Actor();
+        $actor7->setPrenom("Jean")
+                ->setNom("Dujardin")
+                ->setPhoto("dujardin.jpg")
+                ->addFilm($f2);
+                          
+            $manager->persist($actor7);
+
+        $actor8 = new Actor();
+        $actor8->setPrenom("Johnny")
+                ->setNom("Deep")
+                ->setPhoto("deep.jpg")
+                ->addFilm($f2);
+                          
+            $manager->persist($actor8);
         
 
 
