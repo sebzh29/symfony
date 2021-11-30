@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ActorType extends AbstractType
 {
@@ -15,7 +16,17 @@ class ActorType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('photoFile' , VichFileType::class,['required'=>false]);
+            ->add('photoFile' , VichImageType::class,[
+            'required'=>false,
+            'allow_delete' => false,
+            'delete_label' => 'Delete ',
+            'download_label' => 'Download',
+            'download_uri' => false,
+            'image_uri' => false,
+            // 'imagine_pattern' => '...',
+            'asset_helper' => true,
+            'label' => "Photo de l'acteur"
+        ]);
         
     }
 

@@ -47,7 +47,7 @@ class Actor
     private $films;
 
      /**
-     * @Vich\UploadableField(mapping="actor_photo", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="actor_photo", fileNameProperty="photo")
      * @var File
      */
     private $photoFile;
@@ -98,12 +98,18 @@ class Actor
         return $this;
     }
 
-    public function setphotoFile($photoFile)
+    public function getPhotoFile()
+    {
+        return $this->photoFile;
+    }
+
+    public function setPhotoFile(?File $photoFile = null)
     {
         $this->photoFile = $photoFile;
-        if ($this->imageFile instanceof UploadedFile ){
+        if ($this->photoFile instanceof UploadedFile ){
             $this->updated_at = new DateTime('now');
             }
+            return $this;
     }
 
     /**
@@ -133,22 +139,5 @@ class Actor
         return $this;
     }
 
-     /**
-    * @Vich\UploadableField(mapping="actor_image",fileNameProperty="image")
-    * @var File
-    */
-    private $imageFile;
-
-    public function setImageFile(?File $imageFile = null): self
-    {
-        $this->imageFile = $imageFile;
-
-        return $this;
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
+   
 }
