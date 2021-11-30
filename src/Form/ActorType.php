@@ -6,6 +6,7 @@ use App\Entity\Actor;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ActorType extends AbstractType
 {
@@ -14,8 +15,8 @@ class ActorType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('photo')
-        ;
+            ->add('photoFile' , VichFileType::class,['required'=>false]);
+        
     }
 
     public function configureOptions(OptionsResolver $resolver): void
