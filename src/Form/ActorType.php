@@ -15,7 +15,16 @@ class ActorType extends AbstractType
         $builder
             ->add('nom')
             ->add('prenom')
-            ->add('photoFile' , VichFileType::class,['required'=>false]);
+            ->add('photoFile' , VichFileType::class,['required'=>false,
+                                                     'allow_delete' => true,
+                                                     'delete_label' => '...',
+                                                     'download_label' => '...',
+                                                     'download_uri' => false,
+                                                     'image_uri' => false,
+                                                     // 'imagine_pattern' => '...',
+                                                     'asset_helper' => true,
+                                                     'label' => 'Photo de profil',
+        ]);
         
     }
 
@@ -26,3 +35,5 @@ class ActorType extends AbstractType
         ]);
     }
 }
+
+

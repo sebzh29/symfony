@@ -52,6 +52,19 @@ class Actor
      */
     private $photoFile;
 
+    /**
+     * @ORM\Column(type="datetime", nullable = true)
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+       /**
+    * @Vich\UploadableField(mapping="actor_image",fileNameProperty="image")
+    * @var File
+    */
+    private $imageFile;
+
+
     public function __construct()
     {
         $this->films = new ArrayCollection();
@@ -98,7 +111,7 @@ class Actor
         return $this;
     }
 
-    public function setphotoFile($photoFile)
+    public function setphotoFile(?File $photoFile = null)
     {
         $this->photoFile = $photoFile;
         if ($this->imageFile instanceof UploadedFile ){
@@ -133,12 +146,7 @@ class Actor
         return $this;
     }
 
-     /**
-    * @Vich\UploadableField(mapping="actor_image",fileNameProperty="image")
-    * @var File
-    */
-    private $imageFile;
-
+  
     public function setImageFile(?File $imageFile = null): self
     {
         $this->imageFile = $imageFile;
