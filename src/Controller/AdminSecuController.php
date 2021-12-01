@@ -61,9 +61,17 @@ class AdminSecuController extends AbstractController
     /**
      * @Route("/logout", name="deconnexion")
      */
-    public function logout() //a definir
+    public function logout() 
     {
         
+    }
+
+     /**
+     * @Route("/accueil", name="accueil")
+     */
+    public function accueil()
+    {
+        return $this->render('/accueil.html.twig');
     }
 
 }
