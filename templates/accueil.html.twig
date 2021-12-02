@@ -26,13 +26,9 @@
             <h1>Cinéma</h1>
             <ul id="navigation">
             <div class="onglets">
-
-                {# <p> <a href="actor">Listes des acteurs</a></p>
-                <p> <a href="director">Liste des réalisateurs</a></p>
-                <p> <a href="film">Liste des films</a></p>
-                <p> <a href="inscription">Inscription</a></p> #}
-                {# <p> <a href="login">Login</a></p> #}
-                <p> <a href="logout">Logout</a></p>
+               
+                <p> <a href="inscription">Inscription</a></p>
+                <p> <a href="login">Login</a></p>
             
             </div>
             </ul>
@@ -40,6 +36,8 @@
         </nav>
         </center>
         <!-- Fin de la barre de navigation -->
-        {% block body %}{% endblock %}
+        <center>
+        {% block body %}<strong><h1>Bienvenue sur mon site</h1></strong>{% endblock %}
+        </center>
     </body>
 </html>

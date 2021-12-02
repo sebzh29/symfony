@@ -27,7 +27,7 @@ security:
                 check_path: connexion
             logout:
                 path: deconnexion
-                target: actor
+                target: accueil
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall

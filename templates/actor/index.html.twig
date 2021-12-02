@@ -8,6 +8,7 @@
 
     <table>
     {% for actor in actors %}
+
         <tr>
         <td><img src="{{ asset('images/' ~ actor.photo) }}"></td>
         <td>
@@ -21,7 +22,6 @@
         <a href="{{
             path('modifactor', {'id': actor.id} )
         }}">
-        {{dump(app.user)}}
         modif
         </a>
         </td>
@@ -31,11 +31,13 @@
             <img src="{{ asset('images/' ~ actor.photo) }}"> <br/> #}
 
     {% endfor %}
+           
     <tr><td><a href="{{
             path('creationactor')
         }}">Ajoute acteur</a>
         </tr></td>
+        
 
     </table>
-
+{{dump(app.user)}}
 {% endblock %}
